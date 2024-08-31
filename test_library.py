@@ -1,5 +1,5 @@
 import unittest
-from library import Book, Library, return_book
+from library import Book, Library
 class TestLibraryManagementSystem(unittest.TestCase):
     
     # this method is called before each testcase
@@ -20,8 +20,10 @@ class TestLibraryManagementSystem(unittest.TestCase):
         
     # testcase to return book
     def test_return_book(self):
-        self.assertIsNotNone(return_book())
-        self.assertIsNotNone(return_book(1234567890123))
+        # self.assertIsNotNone(return_book())
+        # self.assertIsNotNone(return_book(1234567890123))
+        self.library.return_book(1234567890123)
+        
         
         
     

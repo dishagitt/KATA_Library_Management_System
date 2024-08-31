@@ -53,6 +53,6 @@ class Library:
                 return
         print("Sorry, the book with this ISBN is not available in the library.")
     
-# function to return book
-def return_book():
-    return 1
+    # function to return book
+    def return_book(self,isbn):
+        return isbn
