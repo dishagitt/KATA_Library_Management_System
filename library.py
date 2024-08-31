@@ -69,3 +69,44 @@ class Library:
         for book in self.books:
             print(f"{book.title}")
            
+def main():
+    library = Library()
+
+    while True:
+        print("\nLibrary Management System")
+        print("1. Add Book")
+        print("2. Borrow Book")
+        print("3. Return Book")
+        print("4. View Available Books")
+        print("5. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            isbn = input("Enter ISBN: ")
+            title = input("Enter title: ")
+            author = input("Enter author: ")
+            year = input("Enter publication year: ")
+            book = Book(isbn, title, author, year)
+            library.add_book(book)
+
+        elif choice == '2':
+            isbn = input("Enter ISBN of the book to borrow: ")
+            library.borrow_book(isbn)
+
+        elif choice == '3':
+            isbn = input("Enter ISBN of the book to return: ")
+            library.return_book(isbn)
+
+        elif choice == '4':
+            library.view_available_books()
+
+        elif choice == '5':
+            print("Exiting the system.")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
