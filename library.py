@@ -36,7 +36,7 @@ class Library:
         return book
     
 # function to borrow book from library collection
-def borrow_book():
+def borrow_book(isbn):
     return 1
 
 
