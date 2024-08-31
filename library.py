@@ -55,4 +55,13 @@ class Library:
     
     # function to return book
     def return_book(self,isbn):
-        return isbn
+        for book in self.books:
+            if book.isbn == isbn:
+                if book.is_borrowed:
+                    book.is_borrowed = False
+                    print(f"Thank you for returning '{book.title}'.")
+                else:
+                    print(f"The book '{book.title}' was not borrowed.")
+                return
+        print("Sorry, the book with this ISBN is not in the library's records.")
+        

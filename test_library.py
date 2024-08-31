@@ -11,18 +11,21 @@ class TestLibraryManagementSystem(unittest.TestCase):
     def test_add_book(self):
         # self.assertIsNotNone(add_book("abc"))       
         self.library.add_book(self.book1)
+        self.library.add_book(self.book1) #should not add the same book 
     
     # testcase to borrow book 
     def test_borrow_book(self):
         # self.assertIsNotNone(borrow_book())
         # self.assertTrue(borrow_book(1234567890123))
         self.library.borrow_book(1234567890123)
+        self.library.borrow_book(1234567890123) #should not borrow a book which is already borrowed
         
     # testcase to return book
     def test_return_book(self):
         # self.assertIsNotNone(return_book())
         # self.assertIsNotNone(return_book(1234567890123))
         self.library.return_book(1234567890123)
+        self.library.return_book(1234567890123) #should not return a book which is not borrowed
         
         
         
