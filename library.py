@@ -1,2 +1,3 @@
-def add_book():
-    return 1
+def add_book(book):
+    
+    return book
