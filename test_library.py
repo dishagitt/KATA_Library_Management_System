@@ -1,5 +1,5 @@
 import unittest
-from library import add_book
+from library import add_book, Book
 
 class TestLibraryManagementSystem(unittest.TestCase):
     
