@@ -27,6 +27,9 @@ class TestLibraryManagementSystem(unittest.TestCase):
         self.library.return_book(1234567890123)
         self.library.return_book(1234567890123) #should not return a book which is not borrowed
         
+    def test_view_available_books(self):
+        self.assertIsNotNone(view_available_books())
+        
         
         
     

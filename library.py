@@ -53,7 +53,7 @@ class Library:
                 return
         print("Sorry, the book with this ISBN is not available in the library.")
     
-    # function to return book
+    # method to return book
     def return_book(self,isbn):
         for book in self.books:
             if book.isbn == isbn:
@@ -63,5 +63,5 @@ class Library:
                 else:
                     print(f"The book '{book.title}' was not borrowed.")
                 return
-        print("Sorry, the book with this ISBN is not in the library's records.")
+        print("Sorry, the book with this ISBN is not in the library's records.")  
         
