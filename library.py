@@ -30,4 +30,9 @@ class Library:
     def add_book(self, book):
         self.books.append(book)
         return book
+    
+# function to borrow book from library collection
+def borrow_book():
+    return 1
+
 

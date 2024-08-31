@@ -1,5 +1,5 @@
 import unittest
-from library import Book, Library
+from library import Book, Library, borrow_book
 class TestLibraryManagementSystem(unittest.TestCase):
     
     # testcase for add_book() function    
