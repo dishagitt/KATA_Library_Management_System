@@ -52,3 +52,7 @@ class Library:
                     print(f"You have borrowed '{book.title}'.")
                 return
         print("Sorry, the book with this ISBN is not available in the library.")
+    
+# function to return book
+def return_book():
+    return 1
