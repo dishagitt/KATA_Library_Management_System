@@ -63,5 +63,9 @@ class Library:
                 else:
                     print(f"The book '{book.title}' was not borrowed.")
                 return
-        print("Sorry, the book with this ISBN is not in the library's records.")  
+        print("Sorry, the book with this ISBN is not in the library's records.")
+    
+# function to view availble books
+def view_available_books():
+    return 1    
         

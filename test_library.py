@@ -1,5 +1,5 @@
 import unittest
-from library import Book, Library
+from library import Book, Library, view_available_books
 class TestLibraryManagementSystem(unittest.TestCase):
     
     # this method is called before each testcase
