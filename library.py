@@ -33,8 +33,13 @@ class Library:
     
     # method to add book in library collection
     def add_book(self, book):
-        self.books.append(book)
-        print(f"Book '{book.title}' is added to library. ")
+        
+        for book in self.books:
+            if book.isbn==book.isbn:
+                print(f"Book '{book.title}' is already in the library")
+            else:
+                self.books.append(book)
+                print(f"Book '{book.title}' is added to library. ")
     
     # method to borrow book from library collection
     def borrow_book(self, isbn):
