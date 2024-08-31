@@ -5,7 +5,7 @@ class TestLibraryManagementSystem(unittest.TestCase):
     
     # testcase for add_book() function    
     def test_add_book(self):
-        self.assertIsNotNone(add_book())
+        self.assertIsNotNone(add_book(self))
         
     
 if __name__ == '__main__':
