@@ -5,7 +5,14 @@ class Book:
         self.author = author
         self.publication_year = publication_year
 
+books = []
 
-def add_book(book):
+class Library:
     
-    return book
+    def __init__(self):
+        self.books = []
+    
+    def add_book(self, book):
+        self.books.append(book)
+        return book
+
