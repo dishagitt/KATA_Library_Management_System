@@ -40,9 +40,10 @@ class Library:
     def borrow_book(self, isbn):
         for book in self.books:
             if book.isbn==isbn:
-                book.is_borrowed = True
-                print(f"You have borrowed '{book.title}'.")
-            return
+                if book.is_borrowed:
+                    print(f"Sorry, the book '{book.title}' is already borrowed.")
+                else:
+                    book.is_borrowed = True
+                    print(f"You have borrowed '{book.title}'.")
+                return
         print("Sorry, the book with this ISBN is not available in the library.")
-        
-    
