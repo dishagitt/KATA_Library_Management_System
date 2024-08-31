@@ -33,7 +33,6 @@ class Library:
     
     # method to add book in library collection
     def add_book(self, book):
-        
         for book in self.books:
             if book.isbn==book.isbn:
                 print(f"Book '{book.title}' is already in the library")
@@ -65,7 +64,8 @@ class Library:
                 return
         print("Sorry, the book with this ISBN is not in the library's records.")
     
-# function to view availble books
-def view_available_books():
-    return 1    
-        
+    # method to view availble books
+    def view_available_books(self):
+        for book in self.books:
+            print(f"{book.title}")
+           
