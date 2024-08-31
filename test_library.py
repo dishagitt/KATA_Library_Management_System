@@ -18,6 +18,10 @@ class TestLibraryManagementSystem(unittest.TestCase):
         # self.assertTrue(borrow_book(1234567890123))
         self.library.borrow_book(1234567890123)
         
+    # testcase to return book
+    def test_return_book(self):
+        self.assertIsNotNone(return_book())
+        
     
 if __name__ == '__main__':
     unittest.main()
