@@ -21,6 +21,7 @@ class Book:
         self.title = title
         self.author = author
         self.publication_year = publication_year
+        self.is_borrowed = False
 
 books = []    # Initialized empty list
 
@@ -33,10 +34,15 @@ class Library:
     # method to add book in library collection
     def add_book(self, book):
         self.books.append(book)
-        return book
+        print(f"Book '{book.title}' is added to library. ")
     
-# function to borrow book from library collection
-def borrow_book(isbn):
-    return 1
-
-
+    # method to borrow book from library collection
+    def borrow_book(self, isbn):
+        for book in self.books:
+            if book.isbn==isbn:
+                book.is_borrowed = True
+                print(f"You have borrowed '{book.title}'.")
+            return
+        print("Sorry, the book with this ISBN is not available in the library.")
+        
+    
