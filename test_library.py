@@ -7,6 +7,7 @@ class TestLibraryManagementSystem(unittest.TestCase):
     def test_add_book(self):
         # self.assertIsNotNone(add_book("abc"))
         self.book1=Book(1234567890,'book1','author1',2024)
+        self.add_book(self.book1)
         
     
 if __name__ == '__main__':
