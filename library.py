@@ -1,9 +1,6 @@
 # Book class to hold attributes of book
 class Book:
-    def __init__(self, isbn, title, author, publication_year):
-        if not isinstance(isbn, int):
-            raise ValueError("ISBN must be a positive integer.")
-        
+    def __init__(self, isbn:int, title, author, publication_year):        
         isbn_str=str(isbn)
         if len(isbn_str) != 13:
             raise ValueError("ISBN must be a numeric value and exactly 13 digits long.")
@@ -14,8 +11,12 @@ class Book:
         if not isinstance(author, str):
             raise ValueError("Author must be a non-empty string.")
         
-        if not isinstance(publication_year, int) or not (1000 <= publication_year <= 9999):
+        if not isinstance(publication_year, int):
             raise ValueError("Publication year must be an integer between 1000 and 9999.")
+        
+        if not (1000 <= publication_year <= 9999):
+            raise ValueError("Publication year must be between 1000 and 9999.")
+        
         
         self.isbn = isbn
         self.title = title
@@ -33,12 +34,8 @@ class Library:
     
     # method to add book in library collection
     def add_book(self, book):
-        for book in self.books:
-            if book.isbn==book.isbn:
-                print(f"Book '{book.title}' is already in the library")
-            else:
-                self.books.append(book)
-                print(f"Book '{book.title}' is added to library. ")
+        self.books.append(book)
+        print(f"Book '{book.title}' is added to library. ")
     
     # method to borrow book from library collection
     def borrow_book(self, isbn):
@@ -66,8 +63,14 @@ class Library:
     
     # method to view availble books
     def view_available_books(self):
-        for book in self.books:
-            print(f"{book.title}")
+        available_books = [book for book in self.books if not book.is_borrowed]
+        if available_books:
+            print("Available books:")
+            for book in available_books:
+                print(f"{book.title}")
+        else:
+            print("No books are currently available.")
+
            
 def main():
     library = Library()
