@@ -4,6 +4,10 @@ class Book:
         if not isinstance(isbn, int):
             raise ValueError("ISBN must be a positive integer.")
         
+        isbn_str=str(isbn)
+        if len(isbn_str) != 13:
+            raise ValueError("ISBN must be a numeric value and exactly 13 digits long.")
+        
         if not isinstance(title, str):
             raise ValueError("Title must be a non-empty string.")
         
