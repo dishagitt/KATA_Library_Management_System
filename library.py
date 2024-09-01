@@ -1,6 +1,8 @@
 # Book class to hold attributes of book
 class Book:
     def __init__(self, isbn:int, title, author, publication_year):        
+        
+        # checking book attributes
         isbn_str=str(isbn)
         if len(isbn_str) != 13:
             raise ValueError("ISBN must be a numeric value and exactly 13 digits long.")
@@ -11,11 +13,9 @@ class Book:
         if not isinstance(author, str):
             raise ValueError("Author must be a non-empty string.")
         
-        if not isinstance(publication_year, int):
+        pb_year_str=str(publication_year)
+        if len(pb_year_str) != 4:
             raise ValueError("Publication year must be an integer between 1000 and 9999.")
-        
-        if not (1000 <= publication_year <= 9999):
-            raise ValueError("Publication year must be between 1000 and 9999.")
         
         
         self.isbn = isbn
